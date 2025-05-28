@@ -1,0 +1,446 @@
+// 1. Hello World Program
+// Objective: Understand the basic structure of a Java program.
+
+public class HelloWorld {
+    public static void main(String[] args) {
+        System.out.println("Hello, World!");
+    }
+}
+// 🧠 Learn: Class structure, main method, console output.
+
+
+/* 2. Simple Calculator
+Objective: Practice arithmetic operations and user input.
+*/
+import java.util.Scanner;
+
+public class SimpleCalculator {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter first number: ");
+        double a = sc.nextDouble();
+        System.out.print("Enter second number: ");
+        double b = sc.nextDouble();
+        System.out.print("Choose operation (+ - * /): ");
+        char op = sc.next().charAt(0);
+        double result;
+        switch (op) {
+            case '+': result = a + b; break;
+            case '-': result = a - b; break;
+            case '*': result = a * b; break;
+            case '/': result = b != 0 ? a / b : Double.NaN; break;
+            default: System.out.println("Invalid operation."); return;
+        }
+        System.out.println("Result: " + result);
+    }
+}
+// 🧠 Learn: Scanner, switch-case, arithmetic ops.
+
+
+/* 3. Even or Odd Checker */
+import java.util.Scanner;
+
+public class EvenOdd {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter a number: ");
+        int n = sc.nextInt();
+        System.out.println(n % 2 == 0 ? "Even" : "Odd");
+    }
+}
+// 🧠 Learn: Modulus operator, if/else logic.
+
+
+/* 4. Leap Year Checker */
+import java.util.Scanner;
+
+public class LeapYear {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter year: ");
+        int year = sc.nextInt();
+        boolean leap = (year % 4 == 0 && year % 100 != 0) || (year % 400 == 0);
+        System.out.println(leap ? "Leap Year" : "Not a Leap Year");
+    }
+}
+// 🧠 Learn: Nested conditions, leap year logic.
+
+
+/* 5. Multiplication Table */
+import java.util.Scanner;
+
+public class MultiplicationTable {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter a number: ");
+        int n = sc.nextInt();
+        for (int i = 1; i <= 10; i++) {
+            System.out.println(n + " x " + i + " = " + (n * i));
+        }
+    }
+}
+// 🧠 Learn: Loops, formatted output.
+
+
+/* 6. Data Type Demonstration */
+public class DataTypes {
+    public static void main(String[] args) {
+        int i = 42;
+        float f = 3.14f;
+        double d = 9.81;
+        char c = 'A';
+        boolean b = true;
+        System.out.println("int: " + i);
+        System.out.println("float: " + f);
+        System.out.println("double: " + d);
+        System.out.println("char: " + c);
+        System.out.println("boolean: " + b);
+    }
+}
+// 🧠 Learn: Primitive data types.
+
+
+/* 7. Type Casting Example */
+public class TypeCasting {
+    public static void main(String[] args) {
+        double d = 9.99;
+        int i = (int) d;
+        int j = 10;
+        double d2 = j;
+        System.out.println("Double to Int: " + i);
+        System.out.println("Int to Double: " + d2);
+    }
+}
+// 🧠 Learn: Casting types, narrowing and widening.
+
+
+/* 8. Operator Precedence */
+public class OperatorPrecedence {
+    public static void main(String[] args) {
+        int result = 10 + 5 * 2;
+        System.out.println("Result: " + result); // 20
+    }
+}
+// 🧠 Learn: Java's order of operations.
+
+
+/* 9. Grade Calculator */
+import java.util.Scanner;
+
+public class GradeCalculator {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter marks (0-100): ");
+        int marks = sc.nextInt();
+        char grade;
+        if (marks >= 90) grade = 'A';
+        else if (marks >= 80) grade = 'B';
+        else if (marks >= 70) grade = 'C';
+        else if (marks >= 60) grade = 'D';
+        else grade = 'F';
+        System.out.println("Grade: " + grade);
+    }
+}
+// 🧠 Learn: if-else chains.
+
+
+/* 10. Number Guessing Game */
+import java.util.Scanner;
+import java.util.Random;
+
+public class GuessingGame {
+    public static void main(String[] args) {
+        Random rand = new Random();
+        Scanner sc = new Scanner(System.in);
+        int number = rand.nextInt(100) + 1;
+        int guess;
+        do {
+            System.out.print("Guess a number (1-100): ");
+            guess = sc.nextInt();
+            if (guess < number) System.out.println("Too low!");
+            else if (guess > number) System.out.println("Too high!");
+            else System.out.println("Correct!");
+        } while (guess != number);
+    }
+}
+// 🧠 Learn: Loops, random numbers, conditionals.
+
+
+/* 11. Factorial Calculator */
+import java.util.Scanner;
+
+public class Factorial {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter a number: ");
+        int n = sc.nextInt();
+        long fact = 1;
+        for (int i = 1; i <= n; i++) {
+            fact *= i;
+        }
+        System.out.println("Factorial: " + fact);
+    }
+}
+// 🧠 Learn: Loops, accumulator pattern.
+
+
+/* 12. Method Overloading */
+public class Overloading {
+    static int add(int a, int b) { return a + b; }
+    static double add(double a, double b) { return a + b; }
+    static int add(int a, int b, int c) { return a + b + c; }
+
+    public static void main(String[] args) {
+        System.out.println(add(2, 3));
+        System.out.println(add(2.5, 3.5));
+        System.out.println(add(1, 2, 3));
+    }
+}
+// 🧠 Learn: Method overloading, polymorphism.
+
+
+/* 13. Recursive Fibonacci */
+import java.util.Scanner;
+
+public class Fibonacci {
+    static int fibonacci(int n) {
+        if (n <= 1) return n;
+        return fibonacci(n-1) + fibonacci(n-2);
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter n: ");
+        int n = sc.nextInt();
+        System.out.println("Fibonacci(" + n + "): " + fibonacci(n));
+    }
+}
+// 🧠 Learn: Recursion, function calls.
+
+
+/* 14. Array Sum and Average */
+import java.util.Scanner;
+
+public class ArraySumAvg {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Number of elements: ");
+        int n = sc.nextInt();
+        int[] arr = new int[n];
+        int sum = 0;
+        for (int i = 0; i < n; i++) {
+            arr[i] = sc.nextInt();
+            sum += arr[i];
+        }
+        System.out.println("Sum: " + sum);
+        System.out.println("Average: " + (sum / (double)n));
+    }
+}
+// 🧠 Learn: Arrays, loops, average calculation.
+
+
+/* 15. String Reversal */
+import java.util.Scanner;
+
+public class StringReverse {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String str = sc.nextLine();
+        StringBuilder sb = new StringBuilder(str);
+        System.out.println("Reversed: " + sb.reverse());
+    }
+}
+// 🧠 Learn: StringBuilder, string manipulation.
+
+
+/* 16. Palindrome Checker */
+import java.util.Scanner;
+
+public class Palindrome {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String input = sc.nextLine().replaceAll("[^a-zA-Z0-9]", "").toLowerCase();
+        String reversed = new StringBuilder(input).reverse().toString();
+        System.out.println(input.equals(reversed) ? "Palindrome" : "Not a palindrome");
+    }
+}
+// 🧠 Learn: String cleaning, equality check.
+
+
+/* 17. Class and Object Creation */
+class Car {
+    String make, model;
+    int year;
+    void displayDetails() {
+        System.out.println(year + " " + make + " " + model);
+    }
+}
+public class CarMain {
+    public static void main(String[] args) {
+        Car c = new Car();
+        c.make = "Honda"; c.model = "Civic"; c.year = 2020;
+        c.displayDetails();
+    }
+}
+// 🧠 Learn: OOP basics — class, object, method.
+
+
+/* 18. Inheritance Example */
+class Animal {
+    void makeSound() {
+        System.out.println("Generic sound");
+    }
+}
+class Dog extends Animal {
+    void makeSound() {
+        System.out.println("Bark");
+    }
+}
+public class TestInheritance {
+    public static void main(String[] args) {
+        Animal a = new Animal();
+        Dog d = new Dog();
+        a.makeSound();
+        d.makeSound();
+    }
+}
+// 🧠 Learn: Inheritance, method overriding.
+
+
+/* 19. Interface Implementation */
+interface Playable {
+    void play();
+}
+class Guitar implements Playable {
+    public void play() {
+        System.out.println("Playing Guitar");
+    }
+}
+class Piano implements Playable {
+    public void play() {
+        System.out.println("Playing Piano");
+    }
+}
+public class TestPlayable {
+    public static void main(String[] args) {
+        Playable p1 = new Guitar();
+        Playable p2 = new Piano();
+        p1.play();
+        p2.play();
+    }
+}
+// 🧠 Learn: Interface, polymorphism.
+
+
+/* 20. Try-Catch Example */
+import java.util.Scanner;
+
+public class TryCatch {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        try {
+            int a = sc.nextInt();
+            int b = sc.nextInt();
+            System.out.println("Result: " + a / b);
+        } catch (ArithmeticException e) {
+            System.out.println("Cannot divide by zero.");
+        }
+    }
+}
+// 🧠 Learn: Exception handling.
+
+
+/* 21. Custom Exception */
+class InvalidAgeException extends Exception {
+    public InvalidAgeException(String msg) {
+        super(msg);
+    }
+}
+public class AgeChecker {
+    public static void main(String[] args) {
+        int age = 16;
+        try {
+            if (age < 18) throw new InvalidAgeException("Underage!");
+            System.out.println("Valid age.");
+        } catch (InvalidAgeException e) {
+            System.out.println(e.getMessage());
+        }
+    }
+}
+// 🧠 Learn: Custom exceptions.
+
+
+/* 22. File Writing */
+import java.io.FileWriter;
+import java.util.Scanner;
+
+public class FileWrite {
+    public static void main(String[] args) throws Exception {
+        Scanner sc = new Scanner(System.in);
+        String data = sc.nextLine();
+        FileWriter fw = new FileWriter("output.txt");
+        fw.write(data);
+        fw.close();
+        System.out.println("Data written.");
+    }
+}
+// 🧠 Learn: File I/O.
+
+
+/* 23. File Reading */
+import java.io.BufferedReader;
+import java.io.FileReader;
+
+public class FileRead {
+    public static void main(String[] args) throws Exception {
+        BufferedReader br = new BufferedReader(new FileReader("output.txt"));
+        String line;
+        while ((line = br.readLine()) != null) {
+            System.out.println(line);
+        }
+        br.close();
+    }
+}
+// 🧠 Learn: Reading files line by line.
+
+
+/* 24. ArrayList Example */
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class StudentList {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        ArrayList<String> students = new ArrayList<>();
+        System.out.println("Enter names, type 'end' to stop:");
+        while (true) {
+            String name = sc.nextLine();
+            if (name.equalsIgnoreCase("end")) break;
+            students.add(name);
+        }
+        System.out.println("Students: " + students);
+    }
+}
+// 🧠 Learn: ArrayList, dynamic input.
+
+
+/* 25. HashMap Example */
+import java.util.HashMap;
+import java.util.Scanner;
+
+public class StudentMap {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        HashMap<Integer, String> studentMap = new HashMap<>();
+        System.out.println("Enter 3 students (id name):");
+        for (int i = 0; i < 3; i++) {
+            int id = sc.nextInt();
+            String name = sc.next();
+            studentMap.put(id, name);
+        }
+        System.out.print("Enter ID to search: ");
+        int searchId = sc.nextInt();
+        System.out.println("Student: " + studentMap.getOrDefault(searchId, "Not found"));
+    }
+}
+// 🧠 Learn: HashMap, key-value data structure.
